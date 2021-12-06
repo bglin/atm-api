@@ -20,7 +20,6 @@ $ pip install -r requirements.txt
 with the virtual env activated run the following -
 
 ```sh
-(venv) $ chmod +x run_app.sh
 (venv) $ ./run_app.sh
 ```
 - The api service will now be running on `localhost:5000`
