@@ -20,7 +20,8 @@ $ pip install -r requirements.txt
 with the virtual env activated run the following -
 
 ```sh
-(venv) $ run_app.sh
+(venv) $ chmod +x run_app.sh
+(venv) $ ./run_app.sh
 ```
 - The api service will now be running on `localhost:5000`
 - The api service is preloaded with test account data. Use any of the following Account ID/Pin combination to retrieve an auth token for that account
