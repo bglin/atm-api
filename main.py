@@ -86,10 +86,9 @@ def create_app(test_config=None):
         if atm_balance <=0:
             return custom_error_message("Unable to process your withdrawal at this time",503)
 
-        # acct_id = str(acct_id)
+    
 
         #case 2 account overdrawn (balance is negative). no withdraw allowed 
-        # acct_balance = cur.execute("select balance from accounts where acct_id = :acct_id",{"acct_id":acct_id}).fetchone()["balance"]
         acct_balance = user_account.get_acct_balance()
         if acct_balance < 0:
             return custom_error_message("Your account is overdrawn! You may not make withdrawals at this time.",400)
@@ -139,7 +138,7 @@ def create_app(test_config=None):
                 user_account.update_atm_balance(withdrawal_amount,type="withdrawal")
             
                 
-                # new_balance = cur.execute("select balance from accounts where acct_id = :acct_id",{"acct_id":acct_id}).fetchone()["balance"]
+              
                 #record transaction
                 user_account.record_transaction(withdrawal_amount,user_account.get_acct_balance(),type="withdrawal")
                

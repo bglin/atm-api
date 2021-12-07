@@ -13,8 +13,7 @@ def authorize_user(f):
         
         data = request.headers["Authorization"]
         client_token = str.replace(str(data), 'Bearer ','')
-        print(acct_id)
-        print(client_token)
+        
         user_account=Account(id = acct_id,client_token=client_token)
 
         # check if token exists for account and is not expired
